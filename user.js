@@ -9,7 +9,11 @@ function UserSearch(name, location) {
     this.weather = function(location){
         weather.find({
             search: this.location,
-            degreeType: 'F',})
+            degreeType: 'F',},
+            function (err, result){
+            if (err) throw err;
+            console.log(JSON.stringify(result, null, 2));
+        })
     }
 }
 
